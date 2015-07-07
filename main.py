@@ -18,6 +18,13 @@ class Speedrun(SpeedrunData):
         self.video = SpeedrunData.getVideo(self, pos)
         self.twitter = SpeedrunData.checkTwitter(self, pos)
 
+    def splitTweet(self):
+        if "http" in self.formTweet():
+            tweet = self.formTweet().split(" http")
+            return tweet[0]
+        else:
+            pass
+
     #Forms tweet from data
     def formTweet(self):
         if self.twitter == None:
@@ -32,6 +39,7 @@ class Speedrun(SpeedrunData):
                 tweet = "%s %s in %s by %s: %s" % (GAME_NAME, self.category, self.time, self.twitter, self.video)
         return tweet
 
+    #Checks if the tweet is present in the timeline
     def checkTweet(self):
         usertweets = self.api.user_timeline(count=50, include_rts=False)
         stats = []
@@ -39,7 +47,9 @@ class Speedrun(SpeedrunData):
         tweet_present = False
         for status in usertweets:
             stats.append(status.text)
-        if self.formTweet() in stats:
+        if self.formTweet() in stats or self.splitTweet() in stats:
+            tweet_present = True
+        elif self.formTweet() == DONT_TWEET or self.splitTweet() == DONT_TWEET:
             tweet_present = True
         return tweet_present
 
