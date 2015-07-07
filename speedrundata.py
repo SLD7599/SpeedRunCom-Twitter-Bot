@@ -1,6 +1,5 @@
 import urllib2
 import json
-from sys import argv
 from constants import *
 
 class SpeedrunData:
@@ -90,15 +89,3 @@ class SpeedrunData:
         except:
             return None
 
-
-if __name__ == "__main__":
-    script, pos = argv
-    pos = int(pos)
-
-    allcards = SpeedrunData()
-    print allcards.getTime(pos)
-    print allcards.getCategory(pos)
-    print allcards.findPlayer(pos)
-    print allcards.getVideo(pos)
-    print allcards.getDate(pos)
-    print allcards.checkTwitter(pos)
