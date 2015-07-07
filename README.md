@@ -20,6 +20,8 @@ the GAME_NAME variable.
 To run the bot, open up the terminal in the SpeedRunCom-Twitter-Bot folder and type "python main.py". You need to keep
 the terminal open running this at all times or else the bot wont work.
 
+This bot checks for updates every hour. You can change the interval if you want, however keep in mind that you only have a maximum of 15 requests per 15 minutes. If you want to change it I'd suggest that the minimum interval should be every 120 seconds, just to be safe.
+
 **Note**: If you want your bot to work for multiple different games, you need to run multiple instances of the bot set to different games. If I can find a way to get runs from a game series, I'll be sure to implement it.
 
 **P.S.: This is my first real project, so the code isn't as optimized as it could be.**
