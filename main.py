@@ -36,20 +36,20 @@ class Speedrun(SpeedrunData):
         usertweets = self.api.user_timeline(count=50, include_rts=False)
         stats = []
 
-        tweet_present = True
+        tweet_present = False
         for status in usertweets:
             stats.append(status.text)
-        if self.formTweet in stats:
-            tweet_present = False
+        if self.formTweet() in stats:
+            tweet_present = True
         return tweet_present
 
 
     def sendTweet(self):
-        if self.checkTweet() == True:
+        if self.checkTweet() == False:
             self.api.update_status(status=self.formTweet())
         time.sleep(3600)
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     while True:
         latestrun = Speedrun(0)
         latestrun.sendTweet()
