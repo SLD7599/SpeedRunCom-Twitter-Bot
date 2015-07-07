@@ -5,8 +5,8 @@ A Twitter bot that tweets out new speedruns using the (Speedrun.com API)[https:/
 I tried to make this guide as user friendly as possible. If you still have questions email me at mikemallon99@gmail.com.
 
 Things that you need to have installed:
-  *[Python 2.7](https://www.python.org/download/releases/2.7/)
-  *[Tweepy](https://github.com/tweepy/tweepy)
+ *[Python 2.7](https://www.python.org/download/releases/2.7/)
+ *[Tweepy](https://github.com/tweepy/tweepy)
 
 Next, you want to create a new (Twitter App)[https://apps.twitter.com/]. You can name it anything that you want.
 Then, open your app and click on the "Keys and Access Tokens" tab. They already give you the consumer key and secret,
